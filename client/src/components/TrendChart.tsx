@@ -100,8 +100,8 @@ export const TrendChart: React.FC<TrendChartProps> = ({ data, height = 300 }) =>
         </div>
       </div>
 
-      <div style={{ width: '100%', height }}>
-        <ResponsiveContainer>
+      <div className="w-full" style={{ minHeight: height, height }}>
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={height}>
           <ComposedChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="distressGradient" x1="0" y1="0" x2="0" y2="1">
