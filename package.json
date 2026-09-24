@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "MindGuard AI — Dynamic Mental Health Monitoring & Distress Prediction System",
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
+    "postinstall": "npm run install:all",
+    "install:all": "npm install --prefix server && npm install --prefix client",
     "server:dev": "npm --prefix server run dev",
     "server:build": "npm --prefix server run build",
     "server:start": "npm --prefix server start",
@@ -11,5 +17,8 @@
     "client:build": "npm --prefix client run build",
     "client:preview": "npm --prefix client run preview",
     "build": "npm --prefix server run build && npm --prefix client run build"
+  },
+  "dependencies": {
+    "typescript": "^5.8.2"
   }
 }
